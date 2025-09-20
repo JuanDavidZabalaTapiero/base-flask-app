@@ -1,3 +1,3 @@
-from .blueprints.main.models import Main
+from .blueprints.tests.models import UserTest
 
-__all__ = ["Main"]
+__all__ = ["UserTest"]

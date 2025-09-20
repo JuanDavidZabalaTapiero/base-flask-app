@@ -1,0 +1,11 @@
+@use "../variables" as *;
+
+.message-tests {
+    color: $primary-color;
+    font-family: $font-stack;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid $primary-color;
+    border-radius: 0.25rem;
+    background-color: rgba($primary-color, 0.1);
+}

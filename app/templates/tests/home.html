@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+<!-- MENSAJES FLASH -->
+{% set flash_categories = {
+'error_test_home': 'alert-danger',
+'success_test_home': 'alert-success'
+} %}
+
+<!-- TÍTULO -->
+{% block title %}Inicio{% endblock %}
+
+<!-- CSS -->
+{% block css %}
+{% include "tests/css.html" %}
+{% endblock %}
+
+<!-- BODY -->
+{% block body %}
+<div class="container mt-5">
+    <!-- Título principal -->
+    <h1 class="mb-4 text-center">MAIN</h1>
+
+    <!-- Sección: Nuevo Usuario -->
+    <div class="card shadow-sm mx-auto custom-card">
+        <div class="card-header bg-primary text-white">
+            <i class="bi bi-person-plus-fill me-2"></i> Nuevo Usuario
+        </div>
+        <div class="card-body">
+            <!-- Formulario para crear usuario -->
+            <form action="{{ url_for('tests.new_user') }}" method="post">
+                {{ form.hidden_tag() }}
+
+                <!-- Campo: Nombre -->
+                <div class="mb-3">
+                    {{ form.name.label(class="form-label fw-bold") }}
+                    {{ form.name(class="form-control", placeholder="Escribe el nombre") }}
+                    {% for error in form.name.errors %}
+                    <div class="text-danger small">
+                        <i class="bi bi-exclamation-circle"></i> {{ error }}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Botón de enviar -->
+                <div class="d-grid">
+                    {{ form.submit(class="btn btn-success") }}
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <p class="message-tests mt-3">Esto es un estilo de tests</p>
+</div>
+{% endblock %}

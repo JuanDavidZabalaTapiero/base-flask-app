@@ -24,7 +24,6 @@ frontend/package-lock.json
 
 # === ENTORNO FLASK ===
 instance/
-.env
 *.sqlite3
 
 # === CACHE Y LOGS ===
@@ -37,3 +36,6 @@ instance/
 .coverage
 htmlcov/
 .tox/
+
+# MIGRATIONS (QUITAR)
+migrations/

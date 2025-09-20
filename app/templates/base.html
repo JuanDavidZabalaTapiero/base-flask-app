@@ -9,15 +9,39 @@
     <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}" type="image/x-icon">
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-    <!-- ICONS BOOTSTRAP -->
+    <!-- BOOTSTRAP ICONS  -->
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}">
+    <!-- GENERAL CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/general.min.css')}}">
+    {% block css %}{% endblock %}
 </head>
 
 <body>
+    <!-- MENSAJES FLASH -->
+    <div id="flash-messages"
+        class="d-flex flex-column align-items-center position-fixed top-0 start-50 translate-middle-x mt-3"
+        style="z-index: 1050;">
+        {% if flash_categories %}
+        {% for category, alert_class in flash_categories.items() %}
+        {% with messages = get_flashed_messages(category_filter=[category]) %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert {{alert_class}} fade show server-flash" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+        {% endif %}
+    </div>
     {% block body %}
     {% endblock %}
     <!-- BOOTSTRAP JS -->
     <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <!-- DESVANECER FLASH DEL SERVER -->
+    <script src="{{url_for('static', filename='js/fade_flash.js')}}"></script>
+    {% block scripts %}{% endblock %}
 </body>
 
 </html>

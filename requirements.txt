@@ -12,5 +12,8 @@ mysqlclient==2.2.7
 # MIGRACIONES
 Flask-Migrate==4.1.0
 
+# FORMS
+Flask-WTF==1.2.2
+
 # TESTS
 pytest==8.4.1
