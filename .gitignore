@@ -1,0 +1,19 @@
+# === ENTORNOS VIRTUALES Y VARIABLES DE ENTORNO ===
+.venv
+.env
+
+# === ARCHIVOS DE COMPILACIÓN DE PYTHON ===
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === HERRAMIENTAS DE LINTER / FORMATTER ===
+.ruff_cache/
+
+# === DEPENDENCIAS FRONTEND ===
+frontend/node_modules/
+frontend/package-lock.json
+
+# === PYTEST ===
+.pytest_cache/
