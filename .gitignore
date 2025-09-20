@@ -2,18 +2,38 @@
 .venv
 .env
 
+# === EDITOR ===
+.vscode/
+.idea/
+
 # === ARCHIVOS DE COMPILACIÓN DE PYTHON ===
 **/__pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# === HERRAMIENTAS DE LINTER / FORMATTER ===
-.ruff_cache/
-
 # === DEPENDENCIAS FRONTEND ===
 frontend/node_modules/
 frontend/package-lock.json
 
+# === HERRAMIENTAS DE LINTER / FORMATTER ===
+.ruff_cache/
+
 # === PYTEST ===
 .pytest_cache/
+
+# === ENTORNO FLASK ===
+instance/
+.env
+*.sqlite3
+
+# === CACHE Y LOGS ===
+*.log
+*.pot
+*.mo
+*.db
+*.egg-info/
+.cache/
+.coverage
+htmlcov/
+.tox/
