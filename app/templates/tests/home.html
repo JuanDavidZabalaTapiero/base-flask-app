@@ -2,8 +2,8 @@
 
 <!-- MENSAJES FLASH -->
 {% set flash_categories = {
-'error_test_home': 'alert-danger',
-'success_test_home': 'alert-success'
+'error_tests_home': 'alert-danger',
+'success_tests_home': 'alert-success'
 } %}
 
 <!-- TÍTULO -->
@@ -17,6 +17,10 @@
 <!-- BODY -->
 {% block body %}
 <div class="container mt-5">
+    <button id="theme-toggle" class="btn btn-outline-secondary">
+        <i id="theme-icon" class="bi bi-moon-fill"></i>
+    </button>
+
     <!-- Título principal -->
     <h1 class="mb-4 text-center">MAIN</h1>
 
