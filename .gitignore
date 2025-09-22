@@ -1,3 +1,6 @@
+# MIGRATIONS (QUITAR) !!
+migrations/
+
 # === ENTORNOS VIRTUALES Y VARIABLES DE ENTORNO ===
 .venv
 .env
@@ -36,6 +39,3 @@ instance/
 .coverage
 htmlcov/
 .tox/
-
-# MIGRATIONS (QUITAR)
-migrations/
