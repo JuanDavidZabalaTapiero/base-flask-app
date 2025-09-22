@@ -15,8 +15,11 @@ source .venv/bin/activate
 ## Instalar dependencias
 
 ```bash
-pip install -r requirements.txt # producción
-pip install -r requirements-dev.txt # desarrollo
+# Producción
+pip install -r requirements.txt
+
+# Desarrollo
+pip install -r requirements-dev.txt 
 ```
 
 ## Crear variables de entorno
@@ -59,27 +62,4 @@ pytest
 ## Inicializar pre-commit
 ```bash
 pre-commit install
-```
-
-## Babel
-generar mensajes:
-```bash
-pybabel extract -F babel.cfg -o messages.pot app/
-```
-
-inicializar idioma:
-```bash
-# ejemplo
-pybabel init -i messages.pot -d app/translations -l en
-```
-actualizar el .po:
-```bash
-pybabel extract -F babel.cfg -o messages.pot app/
-pybabel update -i messages.pot -d app/translations
-```
-
-compilar:
-```bash
-# ejemplo
-pybabel compile -d app/translations
 ```
