@@ -27,7 +27,7 @@
         {% if messages %}
         {% for message in messages %}
         <div class="alert {{alert_class}} fade show server-flash" role="alert">
-            {{ message }}
+            <span>{{ message }}</span>
         </div>
         {% endfor %}
         {% endif %}
@@ -35,12 +35,16 @@
         {% endfor %}
         {% endif %}
     </div>
+
     {% block body %}
     {% endblock %}
+
     <!-- BOOTSTRAP JS -->
     <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
     <!-- DESVANECER FLASH DEL SERVER -->
     <script src="{{url_for('static', filename='js/fade_flash.js')}}"></script>
+    <!-- MOSTRAR FLASH EN JS -->
+    <script src="{{url_for('static', filename='js/show_flash.js')}}"></script>
     <!-- ACTIVAR MODO OSCURO -->
     <script src="{{url_for('static', filename='js/darkmode.js')}}"></script>
     {% block scripts %}{% endblock %}

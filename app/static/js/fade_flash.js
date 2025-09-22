@@ -5,5 +5,5 @@ document.addEventListener("DOMContentLoaded", () => {
             // esperar la transición de Bootstrap y luego remover del DOM
             el.addEventListener('transitionend', () => el.remove());
         });
-    }, 3000);
+    }, 2000);
 });

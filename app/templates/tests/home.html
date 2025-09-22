@@ -54,5 +54,22 @@
     </div>
 
     <p class="message-tests mt-3">Esto es un estilo de tests</p>
+
+    <button id="test-flash-btn" class="btn btn-primary">
+        Mensaje Flash desde JS
+    </button>
 </div>
+{% endblock %}
+
+<!-- SCRIPTS -->
+{% block scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("test-flash-btn")
+
+        btn.addEventListener("click", () => {
+            flashMessage("Mensaje flash desde JS", "alert-success");
+        });
+    })
+</script>
 {% endblock %}
