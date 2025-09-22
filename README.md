@@ -19,11 +19,6 @@ pip install -r requirements.txt # producción
 pip install -r requirements-dev.txt # desarrollo
 ```
 
-## Inicializar pre-commit
-```bash
-pre-commit install
-```
-
 ## Crear variables de entorno
 
 Crea un archivo `.env` en la raíz del proyecto:
@@ -59,4 +54,32 @@ python run.py
 ## Ejecutar tests
 ```bash
 pytest
+```
+
+## Inicializar pre-commit
+```bash
+pre-commit install
+```
+
+## Babel
+generar mensajes:
+```bash
+pybabel extract -F babel.cfg -o messages.pot app/
+```
+
+inicializar idioma:
+```bash
+# ejemplo
+pybabel init -i messages.pot -d app/translations -l en
+```
+actualizar el .po:
+```bash
+pybabel extract -F babel.cfg -o messages.pot app/
+pybabel update -i messages.pot -d app/translations
+```
+
+compilar:
+```bash
+# ejemplo
+pybabel compile -d app/translations
 ```

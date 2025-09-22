@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 from .blueprints import register_blueprints
 from .config import Config
-from .extensions import db, migrate
+from .extensions import csrf, db, migrate
 
 
 def create_app(config_class=Config):
@@ -14,6 +14,7 @@ def create_app(config_class=Config):
     # == INICIALIZAR EXTENSIONES ==
     db.init_app(app)
     migrate.init_app(app, db)
+    csrf.init_app(app)
 
     # == IMPORTAR MODELOS ==
     from . import models  # noqa: F401
@@ -21,7 +22,7 @@ def create_app(config_class=Config):
     # == REGISTRAR BLUEPRINTS ==
     register_blueprints(app)
 
-    # == 404
+    # == 404 ==
     @app.errorhandler(404)
     def page_not_found(error):
         return render_template("errors/404.html"), 404
